@@ -35,7 +35,7 @@ object StreamMain {
       }
       override def run(ctx: SourceFunction.SourceContext[String]): Unit = {
         while (isRunning){
-          ctx.collect(config.getProperty("","hello"))
+          ctx.collect(config.getProperty("no-sink-parallelism","hello"))
           Thread.sleep(1000)
         }
       }
